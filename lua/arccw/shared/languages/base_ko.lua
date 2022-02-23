@@ -147,7 +147,7 @@ L["autostat.drawtime"] = "꺼내는 시간"
 L["autostat.sighttime"] = "조준시간"
 L["autostat.cycletime"] = "재정비 시간"
 L["autostat.magextender"] = "장탄수 확장"
-L["autostat.magreducer"] = "탄창 감소량"
+L["autostat.magreducer"] = "장탄수 감소"
 L["autostat.bipod"] = "삼각대 사용 가능"
 L["autostat.holosight"] = "정조준시 조준경 사용"
 L["autostat.zoom"] = "확대율 증가"
@@ -665,10 +665,10 @@ L["desc.go_g3_stock_padded"] = "뺨대를 추가하여 반동을 낮추지만 �
 L["name.go_glock_mag_28"] = "31발들이 9mm G18 탄창"
 L["desc.go_glock_mag_28"] = "기동성은 낮아지지만 탄약 수용량이 늘어납니다"
 
-L["name.go_glock_slide_auto"] = "120mm 글록 슬라이드"
+L["name.go_glock_slide_auto"] = "120mm 글록18 슬라이드"
 L["desc.go_glock_slide_auto"] = "장거리 전투에 특화된 긴 총열입니다. 기동성이 낮아집니다"
 
-L["name.go_glock_slide_short"] = "90mm 글록 슬라이드"
+L["name.go_glock_slide_short"] = "90mm 글록26 슬라이드"
 L["desc.go_glock_slide_short"] = "유효 사거리와 반동 제어력이 줄어들지만 근거리 전투에 특화된 짧은 총열입니다"
 
 L["name.go_homemade_auto"] = "불법 자동 화기"
@@ -1188,6 +1188,9 @@ L["desc.charm_util_battery"] = "과열량과 과열 회복량이 동시에 증�
 
 L["name.go_ammo_airsoft"] = "에어소프트"
 L["desc.go_ammo_airsoft"] = "탄약 소지량을 증가시키고, 피해량을 극한으로 낮춥니다/n단, 실내에선 연사하지 마세요!."
+
+L["name.arccw_go_shield"] = "방탄 방패"
+L["desc.arccw_go_shield"] = "방탄 방패는 총탄을 막는 특수 합금 소재로 제작되었습니다. 진압방패와 혼동하지 마십시오. 진압 방패는 플라스틱 소재로 파편과 투척물만을 막아줍니다."
 
 -- You can translate the trivia of any arbitrary weapon or attachment by adding the phrase ["desc.class_name"]
 -- Similarly, you can translate attachment and weapon names with ["name.class_name"]
