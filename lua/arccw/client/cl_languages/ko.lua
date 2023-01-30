@@ -18,8 +18,8 @@ L["arccw.menus.ammo"]                     = "탄약"
 L["arccw.menus.dev"]                      = "개발자"
 L["arccw.menus.xhair"]                    = "조준선"
 L["arccw.menus.bullet"]                   = "총알 물리효과"
-L["arccw.bullet_help"]                    = "\n총알에 물리 효과를 부여할 경우 총알의 착탄 지점이 비현실적일 수 있습니다"
-
+L["arccw.menus.scopes"]                   = "조준경 설정"
+L["arccw.bullet_help"]                    = "\n총알 물리효과를 멀티 플레이에서 활성화할 경우 서버 상태에 따라 적중률이 크게 떨어질 수 있습니다."
 -- ArcCW_Options_Ammo
 L["arccw.cvar.ammo_detonationmode"]       = "탄약 폭발모드"
 L["arccw.cvar.ammo_detonationmode.desc"]  = "-1 - 비활성화\n 0 - 단순 폭발\n 1 - 파편식 폭발\n 2 - 폭발시 주변 피해 및 점화"
@@ -34,10 +34,11 @@ L["arccw.cvar.hud_showhealth"]            = "체력 표시"
 L["arccw.cvar.hud_showhealth.desc"]       = "커스텀 체력 및 아머 정보 보이를 표시합니다"
 L["arccw.cvar.hud_showammo"]              = "탄약 정보 표시"
 L["arccw.cvar.hud_showammo.desc"]         = "커스텀 탄약, 사격 모드 및 무기 이름을 표시합니다"
+L["arccw.3d2d"]                           = "\n3D2D HUD" -- Obsolete
 L["arccw.cvar.hud_3dfun"]                 = "3D2D식 탄약 정보 표시"
-L["arccw.cvar.hud_3dfun_decay"]           = "HUD 표시 시간"
-L["arccw.cvar.hud_3dfun_decay.desc"]      = "HUD가 사라지기까지 대기 시간입니다\n0으로 지정할 경우 항상 켜집니다"
 L["arccw.cvar.hud_3dfun.desc"]            = "탄약 정보를 총기 바로 옆에 표시합니다"
+L["arccw.cvar.hud_3dfun_decay"]           = "자동으로 사라지는 시간"
+L["arccw.cvar.hud_3dfun_decay.desc"]      = "초 단위의 시간 후 HUD가 숨겨집니다.\n0으로 할 경우 항상 활성화됩니다."
 L["arccw.cvar.hud_minimal"]               = "간소화된 탄약 정보 표시"
 L["arccw.cvar.hud_minimal.desc"]          = "여기에서 제공되는 탄약 표시가 작동하지 않는 경우, 다른 방식으로 표시합니다"
 L["arccw.cvar.hud_forceshow"]             = "강제 HUD 활성화"
@@ -49,8 +50,9 @@ L["arccw.cvar.hudpos_size"]               = "HUD및 글자 크기"
 L["arccw.cvar.hudpos_size.desc"]          = "임의적으로 HUD의 크기를 조정합니다"
 -- ArcCW_Options_Bullet
 L["arccw.cvar.bullet_enable"]             = "총알 물리 효과"
+L["arccw.cvar.enable_penetration"]        = "관통 활성화"
+L["arccw.cvar.enable_ricochet"]           = "도탄 활성화"
 L["arccw.cvar.bullet_gravity"]            = "중력"
-L["arccw.cvar.enable_ricochet"]           = "도탄(튕김) 활성화"
 L["arccw.cvar.bullet_drag"]               = "공기저항"
 L["arccw.cvar.bullet_lifetime"]           = "사라지는 시간"
 L["arccw.cvar.bullet_velocity"]           = "탄속 배율값"
@@ -71,13 +73,14 @@ L["arccw.cvar.embracetradition.desc"]     = "구버전에서 사용된 부착물
 L["arccw.cvar.glare"]                     = "스코프 반사"
 L["arccw.cvar.glare.desc"]                = "배율 조준경 조준시 유리에 주변 큐브맵 배경을 반사합니다"
 L["arccw.cvar.shake"]                     = "화면 흔들림"
+L["arccw.cvar.shakevm"]                   = "1인징 모델 흔들림"
 L["arccw.cvar.shake_info"]                = "사격시 화면이 거칠게 흔들립니다"
 L["arccw.cvar.2d3d"]                      = "도움말 띄우기"
 L["arccw.cvar.2d3d_info"]                 = "떨어진 무기 위에 해당 무기의 정보를 표시합니다"
-L["arccw.cvar.attinv_hideunowned"]        = "소지하지 않는 부착물 숨기기"
-L["arccw.cvar.attinv_darkunowned"]        = "소지하지 않는 부착물 어둡게 표시하기"
+L["arccw.cvar.attinv_hideunowned"]        = "인벤토리에 없는 부착물 숨기기"
+L["arccw.cvar.attinv_darkunowned"]        = "인벤토리에 없는 부착물 어둡게 표시하기"
 L["arccw.cvar.attinv_onlyinspect"]        = "부착물 편집창 비활성화"
-L["arccw.cvar.attinv_simpleproscons"]     = "이점과 단점 단순 표기"
+L["arccw.cvar.attinv_simpleproscons"]     = "이점과 단점 단순 표기(+과 -의 갯수로만 표시)"
 L["arccw.cvar.attinv_closeonhurt"]        = "피해를 입을시 부착물 편집 중단"
 L["arccw.cvar.language"]                  = "언어"
 L["arccw.cvar.language_info"]             = "현재 언어를 변경합니다. 비어있을 경우 gmod_language로 지정된 언어 설정을 따릅니다"
@@ -87,10 +90,18 @@ L["arccw.cvar.font_info"]                 = "폰트를 변경합니다. 비어�
 L["arccw.performance"]                    = "본체 성능에 영향을 주는 설정입니다"
 L["arccw.cvar.cheapscopes"]               = "단순 조준경"
 L["arccw.cvar.cheapscopes.desc"]          = "조준경의 조준 방식을 이중으로 나누지 않고 한 해상도에 크기만 키우는 식으로 변경합니다. 조준경의 배율이 높을수록 크게 체감됩니다"
-L["arccw.cvar.flatscopes"]                = "단일 조준경"
-L["arccw.cvar.flatscopes.desc"]           = "조준경으로 조준시 1인칭 시야 전체를 조준경에 집중하게끔 만듭니다. 불편하지만 사양의 부담은 덜어줍니다"
+L["arccw.cvar.cheapscopesv2_ratio"]       = "시야각 줌인"
+L["arccw.cvar.cheapscopesv2_ratio.desc"]  = "시야각을 이용하여 조준경을 대신합니다. 0은 확대 범위 만큼 먼 거리의 시야 처리가 되나 1은 이러한 기능이 비활성화됩니다."
+L["arccw.cvar.cheapscopesv2.desc"]        = "최신 게임과 같은 PiP 스코프지만 성능에 적은 영향을 줍니다."
+L["arccw.cvar.scopepp"]                   = "조준경 렌즈 색상차"
+L["arccw.cvar.thermalpp"]                 = "적외선 스코프 스크린 효과"
+L["arccw.cvar.scopepp_refract"]           = "스코프 렌즈 굴곡 효과 (실험적 기능)"
+L["arccw.cvar.scopepp_refract_ratio"]     = "렌즈 굴곡 비율"
+--L["arccw.cvar.flatscopes"]                = "단일 조준경"
+--L["arccw.cvar.flatscopes.desc"]           = "조준경으로 조준시 1인칭 시야 전체를 조준경에 집중하게끔 만듭니다. 불편하지만 사양의 부담은 덜어줍니다"
 L["arccw.cvar.muzzleeffects"]             = "3인칭 총구 화염 효과"
 L["arccw.cvar.fastmuzzles"]               = "저사양 총구 화염 효과"
+L["arccw.cvar.fasttracers"]               = "저사양 총알 궤적 효과"
 L["arccw.cvar.shelleffects"]              = "3인칭 탄피 효과"
 L["arccw.cvar.att_showothers"]            = "3인칭 부착물 표시"
 L["arccw.cvar.shelltime"]                 = "탄피가 사라지는 시간"
@@ -101,9 +112,14 @@ L["arccw.cvar.visibility.desc"]           = "해당 유닛만큼의 시야 범�
 -- ArcCW_Options_Viewmodel
 L["arccw.cvar.vm_coolsway"]               = "임의적 총기 흔들림"
 L["arccw.cvar.vm_coolview"]               = "임의적 화면 움직임"
+L["arccw.cvar.drawbarrel"]                = "조준시 조준경에 총열 보이기 (실험적 기능)"
+L["arccw.cvar.vm_addads"]                 = "조준시 조준경 크기"
 L["arccw.cvar.vm_right"]                  = "1인칭 시점 X"
 L["arccw.cvar.vm_forward"]                = "1인칭 시점 Y"
 L["arccw.cvar.vm_up"]                     = "1인칭 시점 Z"
+L["arccw.cvar.vm_pitch"]                  = "1인칭 시점 수직비"
+L["arccw.cvar.vm_yaw"]                    = "1인칭 시점 수평비"
+L["arccw.cvar.vm_roll"]                   = "1인칭 시점 회전비"
 L["arccw.cvar.vm_fov"]                    = "1인칭 시야각"
 L["arccw.cvar.vm_offsetwarn"]             = "1인칭 시점 위치를 임의로 조정할 경우 시야 확보에 방해가 되거나 다른 문제가 발생할 수 있습니다"
 L["arccw.cvar.vm_sway_sprint"]            = "달릴 때 흔들림" -- This is intentionally flipped
@@ -134,6 +150,7 @@ L["arccw.cvar.crosshair_dot"]             = "조준점 표시"
 L["arccw.cvar.crosshair_shotgun"]         = "산탄 탄퍼짐 표시"
 L["arccw.cvar.crosshair_equip"]           = "장비 탄퍼짐 표시"
 L["arccw.cvar.crosshair_static"]          = "조준선 고정"
+L["arccw.cvar.crosshair_trueaim"]         = "정확한 크로스헤어"
 L["arccw.cvar.crosshair_clump"]           = "CW2 방식의 탄퍼짐 원 표시"
 L["arccw.cvar.crosshair_clump_outline"]   = "탄퍼짐 원 외곽선 표시"
 L["arccw.cvar.crosshair_clump_always"]    = "탄퍼짐 원 항상 보이기"
@@ -148,17 +165,16 @@ L["arccw.cvar.mult_range"]                = "유효 사거리"
 L["arccw.cvar.mult_recoil"]               = "반동 배율"
 L["arccw.cvar.mult_penetration"]          = "관통 배율"
 L["arccw.cvar.mult_accuracy"]             = "기본 탄퍼짐"
-L["arccw.cvar.mult_hipfire"]              = "비 견착시 분산 배율"
+L["arccw.cvar.mult_hipfire"]              = "앉을시 분산 배율"
 L["arccw.cvar.mult_movedisp"]             = "이동시 분산 배율"
 L["arccw.cvar.mult_reloadtime"]           = "재장전 시간 배율"
 L["arccw.cvar.mult_sighttime"]            = "조준 시간 배율"
 L["arccw.cvar.mult_defaultclip"]          = "기본 탄약 배율"
 L["arccw.cvar.mult_attchance"]            = "무작위 부착물 장착 확률"
 L["arccw.cvar.mult_heat"]                 = "총기 과열 배율"
-L["arccw.cvar.mult_sway"]                 = "조준 흔들림"
 L["arccw.cvar.mult_shootwhilesprinting"]  = "달리면서 사격"
 -- ArcCW_Options_Atts
-L["arccw.attdesc1"]                       = "ArcCW 베이스는 ACT3의 부착물 인벤토리 시스템, CW와 유사한 부착물 제한, TFA식의 무료 부착물 제공 시스템을 갖추고 있습니다"
+L["arccw.attdesc1"]                       = "ArcCW 베이스는 ACT3의 부착물 인벤토리 시스템, CW와 유사한 부착물 제한, TFA식의 자유로운 부착물 제공 시스템을 갖추고 있습니다"
 L["arccw.attdesc2"]                       = "ACT3 방식의 부착물 인벤토리를 사용하려면 모든 설정을 비활성화하세요"
 L["arccw.cvar.attinv_free"]               = "부착물 소지상태로 시작"
 L["arccw.cvar.attinv_lockmode"]           = "부착물 잠금 모드"
@@ -171,7 +187,6 @@ L["arccw.cvar.atts_spawnrand"]            = "스폰시 무작위로 부착물 �
 L["arccw.cvar.atts_ubglautoload"]         = "하부 레일에 장착되는 무기 장전된 상태로 생성"
 L["arccw.blacklist"]                      = "부착물 제한 메뉴"
 -- ArcCW_Options_Server
-L["arccw.cvar.enable_penetration"]        = "관통 활성화"
 L["arccw.cvar.enable_customization"]      = "부착물 편집 활성화"
 L["arccw.cvar.enable_customization.desc"] = "-1 은 부착물 편집의 기능 자체를 아예 제한합니다.\n0 는 일반 유저의 부착물 편집을 제한합니다\n1 은 부착물 편집을 활성화합니다. 기본값입니다"
 L["arccw.cvar.truenames"]                 = "실제 총기명 (재시작시 적용)"
@@ -309,28 +324,90 @@ L["arccw.cvar.hud_fcgbars"]                  = "사격 모드를 막대 형식�
 L["arccw.bind.toggle_att"]                   = "부착물 유지"
 
 -- 2021-05-05
-L["arccw.cvar.attinv_gamemodebuttons"]    = "다른 게임모드용 버튼"
-L["arccw.cvar.attinv_gamemodebuttons.desc"] = "다크RP나 TTT같은 모드에서 유용한 기능을 표시합니다.\n이것 외에도 사용 키(E)를 꾹 눌러 원래 바인드키에 엑세스 할 수 있습니다."
+L["arccw.cvar.attinv_gamemodebuttons"]    = "게임모드 관련 명령어"
+L["arccw.cvar.attinv_gamemodebuttons.desc"] = "TTT 및 DarkRP와 같은 게임 모드에 대한 유용한 기능을 보여줍니다.\n이 기능을 사용하는 것 외에도 USE를 누르고 있으면 원래 키 바인딩에 액세스할 수도 있습니다."
 
 -- 2021-05-13
 L["arccw.cvar.mult_malfunction"] = "고장 확률"
 L["arccw.cvar.malfunction"]    = "고장 모드"
-L["arccw.cvar.malfunction.0"]   = "0 - 모두 비활성화"
+L["arccw.cvar.malfunction.0"]   = "0 - 모든 총기에 비활성화"
 L["arccw.cvar.malfunction.1"]    = "1 - 활성화"
-L["arccw.cvar.malfunction.2"]    = "2 - 모든 총에서 강제 활성화"
+L["arccw.cvar.malfunction.2"]    = "2 - 강제 활성화"
 
 -- 2021-05-26
-L["arccw.cvar.mult_meleedamage"] = "근접 피해 배율"
-L["arccw.cvar.mult_meleetime"] = "근접공격 시간 배율"
+L["arccw.cvar.mult_meleedamage"] = "근접공격 피해량"
+L["arccw.cvar.mult_meleetime"] = "근접공격 시간"
 
 -- 2021-05-27
-L["arccw.cvar.ammonames"] = "탄약 이름 사용자 지정"
-L["arccw.cvar.ammonames.desc"] = "기본 탄약의 명칭에서 좀 더 사실적이게 느껴지게끔 탄약 명칭을 변경합니다(예를 들면 Pulse Ammo를 소총 탄약으로 변경합니다). 이는 서버 내의 모든 곳에서 적용될 것입니다!"
-L["arccw.cvar.att_showground"]            = "떨어뜨린 무기 부착물 보이기"
+L["arccw.cvar.ammonames"] = "독자적 탄약 명칭"
+L["arccw.cvar.ammonames.desc"] = "일반 탄약 이름을 변경합니다. (such as Pulse Ammo to Rifle Ammo). Also replaces references everywhere else!"
+L["arccw.cvar.att_showground"] = "버려진 상태로도 부착물 표시"
 
 -- 2021-06-02
-L["arccw.cvar.mult_bottomlessclip"] = "장탄수 무제한"
-L["arccw.cvar.mult_infiniteammo"] = "탄약 수 무제한"
+L["arccw.cvar.mult_bottomlessclip"] = "무한 탄창"
+L["arccw.cvar.mult_infiniteammo"] = "무한 탄약"
+
+-- 2021-06-07
+L["arccw.cvar.bodydamagecancel"] = "부위별 데미지 취소"
+L["arccw.cvar.bodydamagecancel.desc"] = "무기가 부위별 데미지가 설정되어있다면, 게리모드 기본 부위별 데미지를 비활성화합니다. 다른 모드가 이 기능을 대체할 경우 체크하십시오."
+
+L["arccw.cvar.enable_sway"] = "1인칭 흔들림 활성화"
+L["arccw.cvar.enable_sway.desc"] = "대부분 무기는 흔들림을 지정하지 않습니다. 모든 무기에 흔들림을 지정하고싶다면, '흔들림 추가'를 조절하십시오"
+L["arccw.cvar.add_sway"] = "흔들림 추가"
+L["arccw.cvar.mult_sway"]    = "흔들림 배율"
+
+-- 2021-08-15
+L["arccw.cvar.mult_rpm"] = "발사 속도"
+L["arccw.cvar.mult_rpm.desc"] = "서버 성능에 영향을 주지만 재미있을 수도 있습니다."
+
+-- 2021-08-16
+L["arccw.cvar.dev_benchgun"] = "거치사격"
+L["arccw.cvar.dev_benchgun.desc"] = "무기를 특정 높이에 고정한 상태로 사격합니다."
+L["arccw.cvar.dev_benchgun_custom"] = "임의 거치사격"
+L["arccw.cvar.dev_benchgun_custom.desc"] = "거치 사격에 사용될 뷰모델 위치와 각도를 임의로 조정합니다.\ngetpos 명령어를 사용해서 좌표를 얻으세요. 얘사:\nsetpos 61 -397 -63;setang 0 96 0"
+
+-- 2021-08-18
+L["arccw.cvar.crosshair_prong_top"] = "윗 십자선 표시"
+L["arccw.cvar.crosshair_prong_left"] = "좌 십자선 표시"
+L["arccw.cvar.crosshair_prong_right"] = "우 십자선 표시"
+L["arccw.cvar.crosshair_prong_bottom"] = "아래 십자선 표시"
+L["arccw.cvar.crosshair_tilt"] = "기울어진 조준선"
+L["arccw.cvar.attinv_giveonspawn"] = "스폰시 부착물 지급"
+
+-- 2021-10-10
+L["arccw.cvar.hud_fcgabbrev"] = "조정간 명칭 단순화"
+
+-- 2021-10-31
+L["arccw.cvar.reloadincust"] = "부착물 메뉴에서 재장전"
+L["arccw.cvar.reloadincust.desc"] = "무기 재장전 중 탄창 부착물을 교체할 수도 있습니다.\n또한 왼손 관련 메뉴도 조정할 수 있습니다."
+
+-- 2021-11-11
+L["arccw.cvar.freeaim"] = "자동 조준"
+L["arccw.cvar.freeaim.1"] = "1 - 활성화"
+L["arccw.cvar.freeaim.2"] = "2 - 반동 보정 없이"
+
+-- 2021-11-24
+L["arccw.cvar.override_lunge_off"] = "근접 돌격 비활성화"
+L["arccw.cvar.override_lunge_off.desc"] = "근접 공격을 사용할 경우 짧은 거리를 빠르게 이동합니다. 해당 설정은 이를 비활성화 합니다."
+
+-- 2021-11-27
+L["arccw.cvar.mult_movespeed"] = "이동속도"
+L["arccw.cvar.mult_movespeedads"] = "조준 중 속도"
+L["arccw.cvar.mult_movespeedfire"] = "사격 중 속도"
+
+-- 2022-02-14
+L["arccw.cvar.vm_nearwall"] = "벽에 붙었을 때 행동"
+L["arccw.cvar.nohl2flash"] = "광원 부착물이 손전등 기능을 대체"
+
+-- 2022-03-24
+L["arccw.cvar.dev_alwaysready"] = "항상 사격 준비 애니메이션 사용"
+L["arccw.cvar.dev_alwaysready.desc"] = "가능한 경우 항시 사격 준비가 된 애니메이션을 사용합니다."
+
+L["arccw.cvar.noinspect"] = "무기 살펴보기 애니메이션 비활성화"
+
+-- 2022-07-10
+L["arccw.cvar.override_hud_off"] = "HUD 강제 비활성화"
+L["arccw.hud_svwarning"] = "HUD는 서버 관리자에 의해 서버단위로 비활성화 할 수 있습니다"
 
 -- Gun Smith Offensive Extra
 
